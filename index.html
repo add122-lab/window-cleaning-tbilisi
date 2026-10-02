@@ -3,607 +3,293 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Чистый Вид Тбилиси — Профессиональная мойка окон и балконов</title>
-  <meta name="description" content="Профессиональная мойка окон, балконов и панорамного остекления в Тбилиси. Без разводов и царапин. Расчет стоимости по фото за 2 минуты.">
+  <title>Чистый Вид Тбилиси | Частный мастер по мойке окон</title>
+  <meta name="description" content="Профессиональная мойка окон, балконов и витражей в Тбилиси. Работаю лично, без посредников. Безопасная химия, спецоборудование, фиксированные цены.">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-            },
-            accent: {
-              emerald: '#10b981',
-              dark: '#0f172a'
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Стили для интерактивного слайдера сравнения До / После */
-    .slider-container {
-      position: relative;
-      overflow: hidden;
-      user-select: none;
-      border-radius: 1rem;
-    }
-    .img-after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-    }
-    .img-before-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      overflow: hidden;
-      width: 50%;
-    }
-    .img-before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      /* Эффект пыли и налета для наглядности демонстрации */
-      filter: contrast(0.85) brightness(0.82) sepia(0.25) blur(0.6px);
-    }
+    body { font-family: 'Inter', sans-serif; }
     .slider-handle {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 4px;
-      background: #ffffff;
-      cursor: ew-resize;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
-      z-index: 10;
-      transform: translateX(-50%);
-    }
-    .slider-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 40px;
-      height: 40px;
-      background: #0284c7;
-      color: white;
-      border: 3px solid white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      touch-action: pan-y;
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-cyan-500 selection:text-white pb-20 md:pb-0">
 
-  <!-- Шапка сайта (Header) -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-400 flex items-center justify-center text-white shadow-sm">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"></path>
-          </svg>
-        </div>
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="p-2 bg-cyan-600 text-white rounded-xl shadow-sm">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        </span>
         <div>
-          <span class="text-lg font-bold tracking-tight text-slate-900 block leading-tight">Чистый Вид</span>
-          <span class="text-xs text-sky-600 font-medium flex items-center gap-1">
-            <svg class="w-3 h-3 text-red-500 inline" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-            </svg>
-            Тбилиси и пригород
-          </span>
+          <span class="font-extrabold text-lg tracking-tight text-slate-900 block leading-tight">Чистый Вид</span>
+          <span class="text-[11px] text-cyan-700 font-semibold uppercase tracking-wider block">Частный мастер • Тбилиси</span>
         </div>
       </div>
-
-      <!-- Быстрые действия в шапке -->
-      <div class="flex items-center space-x-3">
-        <a href="#prices" class="hidden sm:inline-block text-sm font-medium text-slate-600 hover:text-brand-600 transition">Цены</a>
-        <a href="#reviews" class="hidden sm:inline-block text-sm font-medium text-slate-600 hover:text-brand-600 transition">Отзывы</a>
-        <a href="https://wa.me/995555000000?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20мойки%20окон" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white text-xs sm:text-sm font-semibold px-3.5 py-2 rounded-xl transition shadow-sm">
-          <span>WhatsApp</span>
-        </a>
-      </div>
+      <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-cyan-600 rounded-xl hover:bg-cyan-700 transition shadow-sm">
+        Написать мастеру
+      </a>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Секция с главным предложением -->
-    <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-brand-50/70 via-white to-slate-50">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold mb-6">
-            <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
-            Выезжаем во все районы: Vake, Saburtalo, Vera, Ortachala и др.
-          </div>
-          
-          <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
-            Идеально чистые окна в Тбилиси <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-sky-500">без разводов и царапин</span>
-          </h1>
-
-          <p class="text-base sm:text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Моем балконы, витражи и панорамные квартиры на любых этажах. Профессиональный инвентарь, чистые рамы и фурнитура. Вернем вам яркий вид на горы и город.
-          </p>
-
-          <!-- Главный призыв к действию -->
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="https://t.me/your_telegram_username" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-4 rounded-xl text-base shadow-lg shadow-sky-500/25 transition active:scale-98">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
-              </svg>
-              <span>Рассчитать по фото за 2 минуты</span>
-            </a>
-            
-            <a href="https://wa.me/995555000000?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20мойки%20окон" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white border border-slate-200 hover:border-emerald-500 text-slate-700 hover:text-emerald-600 font-semibold px-6 py-4 rounded-xl text-base shadow-sm transition">
-              <svg class="w-5 h-5 fill-current text-emerald-500" viewBox="0 0 24 24">
-                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.11.82.83-3.04-.19-.3a8.214 8.214 0 01-1.26-4.48c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.29-.62-.17-.06-.3-.09-.43.09-.13.19-.5.62-.61.75-.11.13-.23.15-.42.06-.19-.09-.8-.29-1.53-.94-.57-.51-.95-1.13-1.06-1.32-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.34.09-.11.13-.19.19-.32.06-.13.03-.24-.02-.34-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.32h-.37c-.13 0-.34.05-.51.24-.18.19-.68.67-.68 1.63 0 .96.7 1.88.8 2.01.09.13 1.37 2.09 3.32 2.93.46.2.83.32 1.11.41.47.15.89.13 1.23.08.38-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.9-.05-.07-.17-.11-.36-.2z"/>
-              </svg>
-              <span>Написать в WhatsApp</span>
-            </a>
-          </div>
-
-          <div class="mt-8 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-slate-500">
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              Свое оборудование и химия
-            </span>
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              Бережное отношение к рамам
-            </span>
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              Оплата после проверки
-            </span>
-          </div>
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+          Работаю лично во всех районах Тбилиси (Vake, Saburtalo, Vera и др.)
         </div>
-      </div>
-    </section>
-
-    <!-- Блок Сравнения: Интерактивный слайдер До/После -->
-    <section class="py-12 md:py-16 bg-white border-y border-slate-200">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-10">
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Почувствуйте разницу своими глазами</h2>
-          <p class="text-slate-600 mt-2 text-sm sm:text-base">Потяните ползунок в центре влево или вправо, чтобы оценить результат очистки от городской пыли и налета</p>
-        </div>
-
-        <!-- Интерактивный контейнер сравнения -->
-        <div class="max-w-3xl mx-auto shadow-2xl rounded-2xl p-2 bg-slate-100 border border-slate-200">
-          <div id="beforeAfterSlider" class="slider-container aspect-[16/10] sm:aspect-[16/9] w-full relative overflow-hidden rounded-xl cursor-ew-resize">
-            
-            <!-- Картинка ПОСЛЕ (чистое окно) -->
-            <div class="img-after" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80');">
-              <div class="absolute bottom-4 right-4 bg-emerald-600/90 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow">
-                После (Чистый результат)
-              </div>
-            </div>
-
-            <!-- Картинка ДО (грязное окно с фильтром) -->
-            <div id="beforeWrapper" class="img-before-wrapper">
-              <div id="beforeImage" class="img-before" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80');">
-                <div class="absolute bottom-4 left-4 bg-slate-900/80 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow">
-                  До (Пыль и налет)
-                </div>
-              </div>
-            </div>
-
-            <!-- Разделитель и ручка -->
-            <div id="sliderHandle" class="slider-handle">
-              <div class="slider-button">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-4 3 4 3m8-6l4 3-4 3"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-6">
-          <p class="text-xs text-slate-500 italic">Стекла становятся полностью прозрачными, пропуская до 30% больше дневного света в комнату.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Блок Доверия и Профессионализма -->
-    <section class="py-12 md:py-20 bg-slate-50">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="text-brand-600 font-semibold text-xs uppercase tracking-wider">Наш стандарт качества</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">Почему нам доверяют квартиры и виллы</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Преимущество 1 -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-              </svg>
-            </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Профессиональный инвентарь</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Используем стяжки Unger и Ettore, шубки из микрофибры и телескопические штанги. Никаких газет и царапающих жестких щеток.
-            </p>
-          </div>
-
-          <!-- Преимущество 2 -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-              </svg>
-            </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Безопасная эко-химия</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Специальные составы без едкого запаха. Они безопасны для детей, домашних питомцев и не повреждают уплотнительные резинки.
-            </p>
-          </div>
-
-          <!-- Преимущество 3 -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
-              </svg>
-            </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Сложное остекление</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Моем труднодоступные глухие створки, витражи и французские балконы на высоких этажах с соблюдением техники безопасности.
-            </p>
-          </div>
-
-          <!-- Преимущество 4 -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Пунктуальность и чистота</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Приезжаем точно в назначенное время, работаем в чистых бахилах, укрываем паркет и не оставляем после себя луж и грязи.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Блок Цен: Прозрачный прайс -->
-    <section id="prices" class="py-12 md:py-20 bg-white border-t border-slate-200">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="text-brand-600 font-semibold text-xs uppercase tracking-wider">Честная стоимость</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">Понятные цены без скрытых доплат</h2>
-          <p class="text-slate-600 mt-2 text-sm sm:text-base">В стоимость всегда входит мытье стеклопакета с 2-х сторон, пластиковых рам, резинок и подоконников.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          
-          <!-- Тариф 1: Стандарт -->
-          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-brand-500 transition">
-            <div>
-              <h3 class="text-lg font-bold text-slate-900">Стандартные окна</h3>
-              <p class="text-xs text-slate-500 mt-1">Квартиры в типовых домах и новостройках</p>
-              
-              <div class="my-6">
-                <span class="text-3xl sm:text-4xl font-extrabold text-slate-900">от 35 ₾</span>
-                <span class="text-slate-500 text-sm">/ створка</span>
-              </div>
-
-              <ul class="space-y-3 text-sm text-slate-600">
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Очистка стекла с двух сторон
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Мытье рам, пазов и фурнитуры
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Протирка отливов и подоконников
-                </li>
-              </ul>
-            </div>
-
-            <div class="mt-8 pt-4 border-t border-slate-200">
-              <a href="https://t.me/your_telegram_username" target="_blank" rel="noopener" class="block text-center py-2.5 px-4 bg-white border border-slate-300 hover:border-brand-500 text-slate-800 font-semibold rounded-xl text-sm transition">
-                Заказать расчет
-              </a>
-            </div>
-          </div>
-
-          <!-- Тариф 2: Хит (Панорама и Балконы) -->
-          <div class="bg-white border-2 border-brand-500 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-xl relative">
-            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow">
-              Самый частый запрос
-            </div>
-
-            <div>
-              <h3 class="text-lg font-bold text-slate-900">Панорамные балконы</h3>
-              <p class="text-xs text-slate-500 mt-1">Витражные окна, французские лоджии</p>
-              
-              <div class="my-6">
-                <span class="text-3xl sm:text-4xl font-extrabold text-brand-600">от 100 ₾</span>
-                <span class="text-slate-500 text-sm">/ секция</span>
-              </div>
-
-              <ul class="space-y-3 text-sm text-slate-600">
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Очистка высотных и глухих секций
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Удаление въевшейся пыли и смога
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Очистка направляющих и роликов
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Антистатический эффект
-                </li>
-              </ul>
-            </div>
-
-            <div class="mt-8 pt-4 border-t border-slate-100">
-              <a href="https://wa.me/995555000000?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20мойки%20панорамного%20балкона" target="_blank" rel="noopener" class="block text-center py-2.5 px-4 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl text-sm transition shadow-sm">
-                Отправить фото балкона
-              </a>
-            </div>
-          </div>
-
-          <!-- Тариф 3: Комплекс под ключ -->
-          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-brand-500 transition">
-            <div>
-              <h3 class="text-lg font-bold text-slate-900">Вся квартира / Коттедж</h3>
-              <p class="text-xs text-slate-500 mt-1">Генеральная или после ремонта</p>
-              
-              <div class="my-6">
-                <span class="text-3xl sm:text-4xl font-extrabold text-slate-900">Индивидуально</span>
-                <span class="text-slate-500 text-sm block mt-1">Мин. выезд: 150 ₾</span>
-              </div>
-
-              <ul class="space-y-3 text-sm text-slate-600">
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Все окна + балконы + москитные сетки
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Удаление скотча, клея, краски (после ремонта)
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Скидка от объема
-                </li>
-              </ul>
-            </div>
-
-            <div class="mt-8 pt-4 border-t border-slate-200">
-              <a href="https://t.me/your_telegram_username" target="_blank" rel="noopener" class="block text-center py-2.5 px-4 bg-white border border-slate-300 hover:border-brand-500 text-slate-800 font-semibold rounded-xl text-sm transition">
-                Обсудить объем
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Пояснение про минимальный заказ -->
-        <div class="mt-8 bg-sky-50 rounded-xl p-4 border border-sky-100 flex items-center gap-3 text-xs sm:text-sm text-sky-900">
-          <svg class="w-5 h-5 text-sky-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-          </svg>
-          <span><strong>Важно:</strong> Минимальная стоимость выезда мастера по Тбилиси составляет <strong>150 GEL</strong>. Вы можете объединить мойку окон со соседями или друзьями, чтобы разделить минимальный чек!</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Блок Отзывов: Реальные отзывы клиентов из Тбилиси -->
-    <section id="reviews" class="py-12 md:py-20 bg-slate-50 border-t border-slate-200">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="text-brand-600 font-semibold text-xs uppercase tracking-wider">Отзывы заказчиков</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">Что говорят жители Тбилиси</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Отзыв 1 -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 text-amber-400 mb-3">
-                ★★★★★
-              </div>
-              <p class="text-sm text-slate-700 leading-relaxed italic">
-                «Живем на 14 этаже в Ваке с огромным витражным балконом. Сами мыть панически боялись. Ребята приехали со своими штангами, аккуратно все вымыли за 2,5 часа. Стекла просто как хрусталь, спасибо!»
-              </p>
-            </div>
-            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-              <div>
-                <p class="text-xs font-bold text-slate-900">Елена С.</p>
-                <p class="text-[11px] text-slate-500">район Vake</p>
-              </div>
-              <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Панорама</span>
-            </div>
-          </div>
-
-          <!-- Отзыв 2 -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 text-amber-400 mb-3">
-                ★★★★★
-              </div>
-              <p class="text-sm text-slate-700 leading-relaxed italic">
-                «После ремонта на стеклах остался присохший скотч и грунтовка, обычной химией вообще не отмывалось. Мастер очистил всё специальным скребком без единой царапинки. Очень вежливый сервис.»
-              </p>
-            </div>
-            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-              <div>
-                <p class="text-xs font-bold text-slate-900">Давид М.</p>
-                <p class="text-[11px] text-slate-500">район Saburtalo</p>
-              </div>
-              <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">После ремонта</span>
-            </div>
-          </div>
-
-          <!-- Отзыв 3 -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 text-amber-400 mb-3">
-                ★★★★★
-              </div>
-              <p class="text-sm text-slate-700 leading-relaxed italic">
-                «Очень удобно — отправила в телеграм фотки, через минуту назвали точную цену. В субботу приехали вовремя, промыли даже резинки внутри рам, откуда обычно дует пыль. Однозначно рекомендую!»
-              </p>
-            </div>
-            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-              <div>
-                <p class="text-xs font-bold text-slate-900">Анна и Артем</p>
-                <p class="text-[11px] text-slate-500">район Vera</p>
-              </div>
-              <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">3-комнатная квартира</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Финальный блок конверсии в мессенджеры -->
-    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 text-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
-          Узнайте точную стоимость прямо сейчас
-        </h2>
-        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-10 leading-relaxed">
-          Сфотографируйте ваши окна на телефон и отправьте в удобный мессенджер. Мы оценим фронт работ и напишем цену за 2 минуты без спама и звонков.
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight sm:leading-none mb-6">
+          Профессиональная мойка окон и балконов. <span class="text-cyan-600">Без посредников и переплат.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
+          Я — частный мастер. Приезжаю на объект лично со своим профессиональным снаряжением Unger/Ettore, телескопическими штангами и безопасной химией. Никаких случайных наемных рабочих — отвечаю за чистоту и сохранность рам собственной репутацией.
         </p>
 
-        <!-- Кнопки мессенджеров -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-          
-          <!-- Telegram -->
-          <a href="https://t.me/your_telegram_username" target="_blank" rel="noopener" class="flex items-center justify-center gap-3 bg-sky-500 hover:bg-sky-600 text-white font-semibold py-4 px-6 rounded-2xl shadow-lg shadow-sky-500/20 transition active:scale-95">
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
-            </svg>
-            <span>В Telegram</span>
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/995555000000?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20мойки%20окон,%20отправляю%20фото:" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-white bg-emerald-600 hover:bg-emerald-700 font-bold transition shadow-lg shadow-emerald-600/20 text-center">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>Оценить по фото в WhatsApp</span>
           </a>
-
-          <!-- WhatsApp -->
-          <a href="https://wa.me/995555000000?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20мойки%20окон" target="_blank" rel="noopener" class="flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-4 px-6 rounded-2xl shadow-lg shadow-emerald-500/20 transition active:scale-95">
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.11.82.83-3.04-.19-.3a8.214 8.214 0 01-1.26-4.48c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.29-.62-.17-.06-.3-.09-.43.09-.13.19-.5.62-.61.75-.11.13-.23.15-.42.06-.19-.09-.8-.29-1.53-.94-.57-.51-.95-1.13-1.06-1.32-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.34.09-.11.13-.19.19-.32.06-.13.03-.24-.02-.34-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.32h-.37c-.13 0-.34.05-.51.24-.18.19-.68.67-.68 1.63 0 .96.7 1.88.8 2.01.09.13 1.37 2.09 3.32 2.93.46.2.83.32 1.11.41.47.15.89.13 1.23.08.38-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.9-.05-.07-.17-.11-.36-.2z"/>
-            </svg>
-            <span>В WhatsApp</span>
-          </a>
-
-          <!-- Facebook Messenger -->
-          <a href="https://m.me/your_facebook_page" target="_blank" rel="noopener" class="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-2xl shadow-lg shadow-blue-600/20 transition active:scale-95">
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-              <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.91 1.455 5.518 3.735 7.205V22l3.37-1.85c.91.252 1.88.388 2.895.388 5.523 0 10-4.145 10-9.258C22 6.145 17.523 2 12 2zm1.066 12.445l-2.73-2.91-5.328 2.91 5.86-6.223 2.795 2.91 5.263-2.91-5.86 6.223z"/>
-            </svg>
-            <span>В Facebook</span>
+          <a href="https://t.me/your_telegram_username" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-white bg-sky-600 hover:bg-sky-700 font-bold transition shadow-lg shadow-sky-600/20 text-center">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.34-.674.34l.211-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.197 1.006.128.833.867z"/></svg>
+            <span>Написать в Telegram</span>
           </a>
         </div>
-
-        <p class="text-xs text-slate-400 mt-8">
-          Или позвоните нам напрямую: <a href="tel:+995555000000" class="text-sky-400 hover:underline font-medium">+995 (555) 00-00-00</a>
-        </p>
       </div>
-    </section>
-  </main>
-
-  <!-- Подвал сайта (Footer) -->
-  <footer class="bg-slate-950 text-slate-500 text-xs py-8 border-t border-slate-800 pb-24 sm:pb-8">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© 2026 Чистый Вид Тбилиси. Мойка окон, балконов и фасадов.</p>
-      <p>Работаем ежедневно с 09:00 до 20:00 без выходных</p>
     </div>
-  </footer>
+  </section>
 
-  <!-- Плавающая кнопка для смартфонов (Fixed Mobile Bar) -->
-  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 flex gap-2">
-    <a href="https://t.me/your_telegram_username" target="_blank" rel="noopener" class="flex-1 bg-sky-500 text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 text-sm shadow-md">
-      <span>Telegram</span>
-    </a>
-    <a href="https://wa.me/995555000000?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20мойки%20окон" target="_blank" rel="noopener" class="flex-1 bg-emerald-500 text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 text-sm shadow-md">
+  <!-- Interactive Before / After Slider -->
+  <section class="py-12 bg-white border-y border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Результат работы</h2>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Потяните бегунок в центре, чтобы сравнить стекло до и после чистки</p>
+      </div>
+
+      <!-- Slider Container -->
+      <div class="relative w-full max-w-3xl mx-auto aspect-[16/10] rounded-2xl overflow-hidden shadow-xl border border-slate-200 select-none" id="image-compare">
+        <!-- After Image (Clean) -->
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Чистое окно" class="absolute inset-0 w-full h-full object-cover">
+        <span class="absolute bottom-4 right-4 bg-emerald-600/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm pointer-events-none">ПОСЛЕ: Идеальная прозрачность</span>
+
+        <!-- Before Image (Dirty - Clipped) -->
+        <div class="absolute inset-0 w-full h-full overflow-hidden" id="before-container" style="width: 50%;">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Грязное окно" class="absolute inset-0 w-full h-full object-cover filter contrast-75 brightness-90 sepia-[.3]">
+          <span class="absolute bottom-4 left-4 bg-slate-900/80 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm pointer-events-none">ДО: Пыль и налет</span>
+        </div>
+
+        <!-- Slider Divider & Handle -->
+        <div class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-[0_0_10px_rgba(0,0,0,0.5)]" id="slider-line" style="left: 50%;">
+          <div class="slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white text-slate-800 rounded-full shadow-lg border-2 border-cyan-500 flex items-center justify-center font-black text-xs">
+            ⇄
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Почему частный мастер: личные стандарты -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Почему со мной надежнее, чем с агентством</h2>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Прямой контакт, личная ответственность и аккуратность в вашей квартире</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-start">
+          <div class="p-3 bg-cyan-100 text-cyan-700 rounded-xl mb-4 font-bold">01</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">Работаю сам</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Вы точно знаете, кто придет в ваш дом. Я не передаю заказы субподрядчикам и не нанимаю случайных людей с улицы.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-start">
+          <div class="p-3 bg-cyan-100 text-cyan-700 rounded-xl mb-4 font-bold">02</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">Бережно к интерьеру</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Всегда работаю в чистых бахилах, застилаю подоконники и полы впитывающими полотнами — никаких луж, капель и грязных стен.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-start">
+          <div class="p-3 bg-cyan-100 text-cyan-700 rounded-xl mb-4 font-bold">03</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">Оплата строго за результат</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Никаких предоплат. Вы лично проверяете чистоту каждого стекла, отсутствие разводов и только после этого производите оплату.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Прозрачные тарифы -->
+  <section class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Прозрачный прайс-лист</h2>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Без скрытых наценок за выезд или сложность рам</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6">
+        <!-- Карта 1 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-lg text-slate-900">Минимальный заказ</h3>
+            <p class="text-xs text-slate-500 mt-1">Оптимально для небольших квартир</p>
+            <div class="mt-4 mb-6">
+              <span class="text-4xl font-black text-slate-900">150 ₾</span>
+            </div>
+            <ul class="text-sm text-slate-600 space-y-2.5">
+              <li class="flex items-center gap-2">✓ Выезд в любой район Тбилиси</li>
+              <li class="flex items-center gap-2">✓ До 4 стандартных створок</li>
+              <li class="flex items-center gap-2">✓ Мойка рам, пазов и подоконников</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/995555000000?text=Здравствуйте!%20Хочу%20заказать%20минимальный%20выезд%20за%20150%20GEL" class="mt-6 block text-center py-2.5 px-4 bg-white border border-slate-300 hover:border-slate-400 font-semibold rounded-xl text-slate-700 transition">Заказать</a>
+        </div>
+
+        <!-- Карта 2 (Популярный) -->
+        <div class="bg-cyan-50 border-2 border-cyan-500 rounded-2xl p-6 flex flex-col justify-between relative shadow-md">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">Частый выбор</span>
+          <div>
+            <h3 class="font-bold text-lg text-slate-900">Стандартные окна</h3>
+            <p class="text-xs text-cyan-800 mt-1">Для 2-3 комнатных квартир</p>
+            <div class="mt-4 mb-6">
+              <span class="text-4xl font-black text-slate-900">35 ₾</span>
+              <span class="text-xs text-slate-500 font-medium">/ створка</span>
+            </div>
+            <ul class="text-sm text-slate-700 space-y-2.5">
+              <li class="flex items-center gap-2">✓ Двусторонняя очистка стекла</li>
+              <li class="flex items-center gap-2">✓ Обеспыливание москитных сеток</li>
+              <li class="flex items-center gap-2">✓ Вычистка дренажных каналов</li>
+              <li class="flex items-center gap-2">✓ Удаление водного камня</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/995555000000?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20помывки%20окон%20в%20квартире" class="mt-6 block text-center py-2.5 px-4 bg-cyan-600 hover:bg-cyan-700 font-semibold rounded-xl text-white transition">Рассчитать стоимость</a>
+        </div>
+
+        <!-- Карта 3 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-lg text-slate-900">Панорама и балконы</h3>
+            <p class="text-xs text-slate-500 mt-1">Французские окна и остекление в пол</p>
+            <div class="mt-4 mb-6">
+              <span class="text-4xl font-black text-slate-900">от 100 ₾</span>
+            </div>
+            <ul class="text-sm text-slate-600 space-y-2.5">
+              <li class="flex items-center gap-2">✓ Безопасная мойка на высоте</li>
+              <li class="flex items-center gap-2">✓ Очистка глухих уличных створок</li>
+              <li class="flex items-center gap-2">✓ Профессиональные стяжки Unger</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/995555000000?text=Здравствуйте!%20Нужно%20помыть%20панорамный%20балкон,%20отправляю%20фото:" class="mt-6 block text-center py-2.5 px-4 bg-white border border-slate-300 hover:border-slate-400 font-semibold rounded-xl text-slate-700 transition">Оценить балкон</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок рекомендации: Скидка 15% за соседа -->
+  <section class="py-14 bg-gradient-to-br from-amber-50 to-orange-50 border-b border-amber-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-amber-200 shadow-sm flex flex-col md:flex-row items-center gap-6">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center shrink-0">
+          <svg class="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div class="text-center md:text-left flex-1">
+          <div class="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-lg mb-2">Сарафанная программа</div>
+          <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-2">Скидка 15% за рекомендацию соседям в ЖК</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Посоветуйте меня в чате вашего жилого комплекса или дома. Если сосед сделает заказ — вы получаете <b>скидку 15%</b> на следующую мойку, либо вы оба получаете скидку сразу, если моем вам и соседу в один день!
+          </p>
+        </div>
+        <div class="shrink-0 w-full md:w-auto">
+          <a href="https://wa.me/995555000000?text=Привет!%20Хочу%20узнать%20про%20скидку%2015%25%20при%20заказе%20с%20соседями" class="block w-full text-center px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold transition shadow-sm text-sm">
+            Скооперироваться с соседом
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты и форма связи -->
+  <section id="contact" class="py-16 bg-slate-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl sm:text-4xl font-black tracking-tight mb-4">Назовите район и пришлите фото</h2>
+      <p class="text-slate-400 text-sm sm:text-base mb-8 max-w-lg mx-auto">
+        Я на связи каждый день с 09:00 до 20:00. Отправьте фото окон в удобный мессенджер — рассчитаю стоимость за пару минут.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/79524401707?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20мойки%20окон" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-bold transition shadow-lg text-center">
+          <span>Написать в WhatsApp</span>
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/D_I_Mazaev" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-sky-600 hover:bg-sky-500 font-bold transition shadow-lg text-center">
+          <span>Написать в Telegram</span>
+        </a>
+
+        <!-- Facebook Messenger -->
+        <a href="https://m.me/your_facebook_page" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 font-bold transition shadow-lg text-center">
+          <span>Facebook Messenger</span>
+        </a>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p>© 2026 Чистый Вид Тбилиси. Частный мастер по мойке окон.</p>
+        <p>Телефон: +995 (595) 01-58-49</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Мобильная плавающая плашка (всегда под рукой на телефоне) -->
+  <div class="fixed bottom-0 left-0 right-0 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200 flex items-center gap-3 md:hidden z-50">
+    <a href="https://wa.me/995555000000?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20мойки%20окон" class="flex-1 py-3 px-4 bg-emerald-600 text-white font-bold rounded-xl text-center text-sm flex items-center justify-center gap-2">
       <span>WhatsApp</span>
+    </a>
+    <a href="https://t.me/your_telegram_username" class="flex-1 py-3 px-4 bg-sky-600 text-white font-bold rounded-xl text-center text-sm flex items-center justify-center gap-2">
+      <span>Telegram</span>
     </a>
   </div>
 
-  <!-- Скрипт интерактивного сравнения До/После (без внешних библиотек) -->
+  <!-- Vanilla JS для слайдера До/После -->
   <script>
-    (function () {
-      const container = document.getElementById('beforeAfterSlider');
-      const beforeWrapper = document.getElementById('beforeWrapper');
-      const handle = document.getElementById('sliderHandle');
-      let isDragging = false;
+    const container = document.getElementById('image-compare');
+    const beforeContainer = document.getElementById('before-container');
+    const sliderLine = document.getElementById('slider-line');
+    let isDown = false;
 
-      function updateSliderPosition(x) {
-        const rect = container.getBoundingClientRect();
-        let position = ((x - rect.left) / rect.width) * 100;
-        
-        // Ограничиваем от 0 до 100%
-        if (position < 5) position = 5;
-        if (position > 95) position = 95;
+    function move(e) {
+      if (!isDown) return;
+      const rect = container.getBoundingClientRect();
+      const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+      let x = clientX - rect.left;
+      if (x < 0) x = 0;
+      if (x > rect.width) x = rect.width;
+      const percent = (x / rect.width) * 100;
+      beforeContainer.style.width = percent + '%';
+      sliderLine.style.left = percent + '%';
+    }
 
-        beforeWrapper.style.width = position + '%';
-        handle.style.left = position + '%';
-      }
+    container.addEventListener('mousedown', () => isDown = true);
+    window.addEventListener('mouseup', () => isDown = false);
+    window.addEventListener('mousemove', move);
 
-      // Обработка мыши
-      container.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        updateSliderPosition(e.clientX);
-      });
-
-      window.addEventListener('mouseup', () => {
-        isDragging = false;
-      });
-
-      window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        updateSliderPosition(e.clientX);
-      });
-
-      // Обработка сенсорных экранов (Touch)
-      container.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        updateSliderPosition(e.touches[0].clientX);
-      }, { passive: true });
-
-      window.addEventListener('touchend', () => {
-        isDragging = false;
-      });
-
-      window.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        updateSliderPosition(e.touches[0].clientX);
-      }, { passive: true });
-    })();
+    container.addEventListener('touchstart', () => isDown = true);
+    window.addEventListener('touchend', () => isDown = false);
+    window.addEventListener('touchmove', move);
   </script>
 </body>
 </html>
